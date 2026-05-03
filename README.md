@@ -33,7 +33,8 @@ On-chain: Only the unique CID (Content Identifier) and the issuer's signature ar
 📜 Proof of Concept (Transaction)
 You can verify the latest contract interaction on the Stellar Testnet:
 
-Transaction Hash: 02759d3dad35bbb22e52c005dd52eece17ba79bc259d01812
+Transaction Hash:<img width="1413" height="461" alt="image" src="https://github.com/user-attachments/assets/58c47835-2306-4970-b7e8-708a4003fd67" />
+
 
 ⚙️ Installation & Setup
 Clone the repository:
