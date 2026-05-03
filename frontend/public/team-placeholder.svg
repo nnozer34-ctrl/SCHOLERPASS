@@ -1,0 +1,34 @@
+<svg width="800" height="450" viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a2e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2d2d4a;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <rect width="800" height="450" fill="url(#bgGrad)"/>
+  
+  <!-- People silhouettes -->
+  <circle cx="120" cy="120" r="35" fill="#6366f1" opacity="0.8"/>
+  <ellipse cx="120" cy="210" rx="50" ry="70" fill="#6366f1" opacity="0.8"/>
+  
+  <circle cx="280" cy="100" r="35" fill="#8b5cf6" opacity="0.8"/>
+  <ellipse cx="280" cy="210" rx="50" ry="70" fill="#8b5cf6" opacity="0.8"/>
+  
+  <circle cx="440" cy="130" r="35" fill="#a78bfa" opacity="0.8"/>
+  <ellipse cx="440" cy="220" rx="50" ry="70" fill="#a78bfa" opacity="0.8"/>
+  
+  <circle cx="600" cy="110" r="35" fill="#c4b5fd" opacity="0.8"/>
+  <ellipse cx="600" cy="210" rx="50" ry="70" fill="#c4b5fd" opacity="0.8"/>
+  
+  <circle cx="720" cy="140" r="35" fill="#ddd6fe" opacity="0.8"/>
+  <ellipse cx="720" cy="220" rx="50" ry="70" fill="#ddd6fe" opacity="0.8"/>
+  
+  <!-- Text -->
+  <text x="400" y="380" font-size="24" font-weight="bold" fill="#e0e7ff" text-anchor="middle" font-family="Inter, sans-serif">
+    ScholarPass Team
+  </text>
+  <text x="400" y="410" font-size="14" fill="#a5b4fc" text-anchor="middle" font-family="Inter, sans-serif">
+    Blockchain Education Platform
+  </text>
+</svg>

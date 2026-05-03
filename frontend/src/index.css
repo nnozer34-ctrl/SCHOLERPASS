@@ -1,0 +1,54 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg: #05030a;
+  --surface: rgba(18, 14, 28, 0.72);
+  --surface2: rgba(255, 255, 255, 0.055);
+  --border: rgba(255, 255, 255, 0.12);
+  --accent: #9b5cff;
+  --accent-hover: #b78cff;
+  --accent-glow: rgba(155, 92, 255, 0.32);
+  --cyan: #22d3ee;
+  --success: #22c55e;
+  --warning: #f59e0b;
+  --error: #ef4444;
+  --text: #fbfbff;
+  --text-muted: #b9b2c9;
+  --text-dim: #6f6684;
+  --mono: "JetBrains Mono", monospace;
+  --sans: "Inter", sans-serif;
+  --radius: 8px;
+  --radius-sm: 8px;
+}
+
+body {
+  font-family: var(--sans);
+  background:
+    radial-gradient(circle at 18% 12%, rgba(155, 92, 255, 0.22), transparent 30%),
+    radial-gradient(circle at 78% 18%, rgba(34, 211, 238, 0.12), transparent 28%),
+    linear-gradient(180deg, #05030a 0%, #0b0714 55%, #05030a 100%);
+  color: var(--text);
+  min-height: 100vh;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.65), transparent 78%);
+}
+
+#root {
+  min-height: 100vh;
+}

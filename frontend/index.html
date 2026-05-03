@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ScholarPass Wallet</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="sstyle.css"> 
+  </head>
+  <body>
+    <!-- Tema Butonu -->
+    <button id="theme-toggle" title="Temayı Değiştir">🌙</button>
+
+    <!-- ÜST BAŞLIK ALANI TAMAMEN KALDIRILDI -->
+
+    <!-- NAVİGASYON BARI -->
+    <nav class="custom-nav-bar">
+      <div class="nav-inner">
+        <div class="nav-left">
+          <div class="mini-star-icon"></div>
+          <!-- Marka ismi isteğin üzerine buradan da kaldırıldı -->
+        </div>
+
+        <ul class="nav-links">
+          <li><a href="#" class="active">Anasayfa</a></li>
+          <li><a href="#">Sertifikalar</a></li>
+          <li><a href="#">Mühürleme</a></li>
+          <li><a href="#">Doğrulama</a></li>
+          <li><a href="#">Hakkımızda</a></li>
+        </ul>
+
+        <div id="root"></div>
+      </div>
+    </nav>
+
+    <main class="container">
+      <section class="options-grid">
+        <div class="option-card">
+          <div class="card-icon">🎓</div>
+          <h3>Sertifikalarım</h3>
+          <p>Dijital kimliğine kayıtlı tüm akademik başarılarını incele.</p>
+          <button class="card-btn" data-scholarpass-action="certificates">Görüntüle</button>
+        </div>
+
+        <div class="option-card">
+          <div class="card-icon">📝</div>
+          <h3>Yeni Kayıt</h3>
+          <p>Yeni bir mikro-yetkinliği blockchain üzerine kaydet.</p>
+          <button class="card-btn" data-scholarpass-action="new">Oluştur</button>
+        </div>
+
+        <div class="option-card">
+          <div class="card-icon">🔍</div>
+          <h3>Doğrula</h3>
+          <p>Bir sertifikanın orijinalliğini kontrol et.</p>
+          <button class="card-btn" data-scholarpass-action="verify">Sorgula</button>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="/src/main.tsx"></script>
+
+    <script>
+      const btn = document.getElementById("theme-toggle");
+      const htmlElement = document.documentElement;
+      const savedTheme = localStorage.getItem("theme");
+      if (savedTheme === "dark") {
+        htmlElement.setAttribute("data-theme", "dark");
+        btn.textContent = "☀️";
+      }
+
+      btn.addEventListener("click", () => {
+        const isDark = htmlElement.getAttribute("data-theme") === "dark";
+        if (isDark) {
+          htmlElement.removeAttribute("data-theme");
+          btn.textContent = "🌙";
+          localStorage.setItem("theme", "light");
+        } else {
+          htmlElement.setAttribute("data-theme", "dark");
+          btn.textContent = "☀️";
+          localStorage.setItem("theme", "dark");
+        }
+      });
+
+      function yildizlariOlustur() {
+        const container = document.createElement('div');
+        container.className = 'stars-container';
+        document.body.appendChild(container);
+        for (let i = 0; i < 200; i++) {
+          const star = document.createElement('div');
+          star.className = 'star';
+          const size = Math.random() * 2.5 + 'px';
+          star.style.width = size;
+          star.style.height = size;
+          star.style.left = Math.random() * 100 + '%';
+          star.style.top = Math.random() * 100 + '%';
+          star.style.setProperty('--sure', (Math.random() * 3 + 2) + 's');
+          star.style.animationDelay = Math.random() * 5 + 's';
+          container.appendChild(star);
+        }
+      }
+      window.addEventListener('DOMContentLoaded', yildizlariOlustur);
+
+      document.querySelectorAll('[data-scholarpass-action]').forEach((button) => {
+        button.addEventListener('click', () => {
+          window.dispatchEvent(
+            new CustomEvent('scholarpass:navigate', {
+              detail: button.getAttribute('data-scholarpass-action')
+            })
+          );
+        });
+      });
+    </script>
+  </body>
+</html>
