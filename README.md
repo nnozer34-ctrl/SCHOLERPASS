@@ -53,6 +53,9 @@ Kod snippet'i
 VITE_PINATA_JWT=your_jwt_here
 Run the development server:
 
+<img width="1705" height="946" alt="image" src="https://github.com/user-attachments/assets/eadba479-856e-4ffa-a2cb-9fb9a5a5fd60" />
+
+
 Bash
 npm run dev
 🔮 Roadmap
