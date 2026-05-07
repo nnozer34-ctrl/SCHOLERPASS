@@ -41,7 +41,7 @@ Clone the repository:
 
 Bash
 git clone https://github.com/nnozer34-ctrl/ScholarPass.git
-cd ScholarPass
+cd ScholerPass
 Install dependencies:
 
 Bash
