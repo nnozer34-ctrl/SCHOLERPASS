@@ -40,7 +40,7 @@ Transaction Hash:<img width="1413" height="461" alt="image" src="https://github.
 Clone the repository:
 
 Bash
-git clone https://github.com/yourusername/ScholarPass.git
+git clone https://github.com/nnozer34-ctrl/ScholarPass.git
 cd ScholarPass
 Install dependencies:
 
